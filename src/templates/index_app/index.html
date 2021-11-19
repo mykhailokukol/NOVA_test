@@ -1,0 +1,22 @@
+{% extends 'blocks/base.html' %}
+
+{% block title %}
+  Начальная страница
+{% endblock %}
+
+{% block content %}
+  <div class="">
+    <h3>Найти контакт:</h3>
+    <form class="" action="{% url 'index_page' %}" method="get">
+      {{ DetectForm.as_p }}
+      <button type="submit" name="button">Поиск</button>
+    </form>
+    <div class="messages">
+      <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock %}
